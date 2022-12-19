@@ -2,12 +2,15 @@ package tdl.code.servlets;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import tdl.code.dao.UserDAO;
+import tdl.code.entities.User;
 import tdl.code.services.DataServices.DataService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,29 +22,21 @@ import java.util.List;
 public class HomeServlet extends HttpServlet {
 
     DataService dataService;
-
+    private final UserDAO userDAO;
     @Inject
-    public HomeServlet(DataService dataService){
+    public HomeServlet(DataService dataService, UserDAO userDAO){
         this.dataService = dataService;
+        this.userDAO = userDAO;
     }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<String> list = new ArrayList<String>();
-        try{
-            Statement statement = dataService.getConnection().createStatement();
-            ResultSet res = statement.executeQuery("SELECT * FROM users");
 
-            while(res.next()){
-                list.add(res.getLong(1) + " | " + res.getLong(2) + " | " + res.getString(3));
-            }
+        HttpSession session = req.getSession();
 
-            System.out.println(list.size());
+        String userId = (String) session.getAttribute("authUserId");
+        if(userId != null){
+            req.setAttribute("authUser", userDAO.getUserById(userId));
         }
-        catch (SQLException ex){
-            System.out.println(ex.getMessage());
-        }
-
-        req.setAttribute("list", list.toArray(new String[0]));
 
         req.setAttribute("pageBody", "home.jsp");
         req.getRequestDispatcher("/_layout.jsp")

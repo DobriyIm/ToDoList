@@ -5325,75 +5325,84 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="1205" parent="416" name="text">
-      <DataType>varchar(2048)|0s</DataType>
+    <column id="1205" parent="416" name="userid">
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="1206" parent="416" name="creationDate">
-      <DataType>date|0s</DataType>
+    <column id="1206" parent="416" name="text">
+      <DataType>varchar(2048)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="1207" parent="416" name="completionTime">
-      <DataType>varchar(255)|0s</DataType>
+    <column id="1207" parent="416" name="creationDate">
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="1208" parent="416" name="completionDate">
+    <column id="1208" parent="416" name="completionTime">
       <DataType>varchar(255)|0s</DataType>
       <Position>5</Position>
     </column>
-    <index id="1209" parent="416" name="PRIMARY">
+    <column id="1209" parent="416" name="completionDate">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <index id="1210" parent="416" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="1210" parent="416" name="PRIMARY">
+    <index id="1211" parent="416" name="userId_index">
+      <ColNames>userid</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="1212" parent="416" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="1211" parent="417" name="id">
+    <column id="1213" parent="417" name="id">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="1212" parent="417" name="login">
+    <column id="1214" parent="417" name="login">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="1213" parent="417" name="pass">
+    <column id="1215" parent="417" name="pass">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="1214" parent="417" name="salt">
+    <column id="1216" parent="417" name="salt">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="1215" parent="417" name="email">
+    <column id="1217" parent="417" name="email">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="1216" parent="417" name="PRIMARY">
+    <index id="1218" parent="417" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="1217" parent="417" name="email_unique">
+    <index id="1219" parent="417" name="email_unique">
       <ColNames>email</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="1218" parent="417" name="PRIMARY">
+    <key id="1220" parent="417" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="1219" parent="417" name="email_unique">
+    <key id="1221" parent="417" name="email_unique">
       <UnderlyingIndexName>email_unique</UnderlyingIndexName>
     </key>
   </database-model>

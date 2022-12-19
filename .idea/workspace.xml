@@ -9,31 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55cffabd-3a73-49c9-a1ee-18dfdef3d8d5" name="Changes" comment="Created">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/dao/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/ioc/ConfigListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/ioc/ConfigModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/ioc/ConfigServlets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/services/DataServices/DataService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/services/DataServices/MySqlService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/services/HashServices/HashService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/services/HashServices/Sha1HashService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/HomeServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Components/footer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Components/header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Components/navbar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/home.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/_layout.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
+    <list default="true" id="55cffabd-3a73-49c9-a1ee-18dfdef3d8d5" name="Changes" comment="dao and entity added">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/dao/TaskDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/entities/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/SignInServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/SignUpServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/signIn.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/signUp.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c8beac4-1416-4d5c-abb6-41e45df9b403.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c8beac4-1416-4d5c-abb6-41e45df9b403/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c8beac4-1416-4d5c-abb6-41e45df9b403/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/baa25f5e-b0f3-41aa-8b35-5a7a553314c9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/baa25f5e-b0f3-41aa-8b35-5a7a553314c9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/ioc/ConfigModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/ioc/ConfigModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/ioc/ConfigServlets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/ioc/ConfigServlets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/HomeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Components/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Components/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Interface" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -68,21 +62,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "build.tools"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql",
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IntelliJ IDEA\Java Projects\Web\ToDoList\src\main\java\tdl\code" />
@@ -178,18 +175,6 @@
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -199,7 +184,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671352057600</updated>
-      <workItem from="1671352059193" duration="12079000" />
+      <workItem from="1671352059193" duration="12213000" />
+      <workItem from="1671441740571" duration="8863000" />
+      <workItem from="1671453652399" duration="3365000" />
     </task>
     <task id="LOCAL-00001" summary="Created">
       <created>1671352200144</created>
@@ -208,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671352200144</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="dao and entity added">
+      <created>1671368717792</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671368717792</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +221,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created" />
+    <MESSAGE value="dao and entity added" />
+    <option name="LAST_COMMIT_MESSAGE" value="dao and entity added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

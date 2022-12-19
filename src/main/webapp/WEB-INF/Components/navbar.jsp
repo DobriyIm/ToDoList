@@ -1,12 +1,18 @@
+<%@ page import="tdl.code.entities.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% String host = request.getContextPath(); %>
+<%
+    String host = request.getContextPath();
+    User user = (User) request.getAttribute("authUser");
+%>
 
-<nav class="top-menu">
-    <a class="navbar-logo" href=""><img src="https://html5book.ru/wp-content/uploads/2017/04/lily-logo.png"></a>
-    <ul class="menu-main">
-        <li><a href="">Home</a></li>
-        <li><a href="">Tasks</a></li>
-        <li><a href="">Log in</a></li>
-        <li><a href="">Log out</a></li>
+<nav>
+    <ul>
+        <% if(user != null) { %>
+            <li><a href="<%=host%>/">Home</a></li>
+            <li><a href="<%=host%>/signIn?logout=true">Log out</a></li>
+        <% } else{ %>
+            <li><a href="<%=host%>/signIn">Sign In</a></li>
+            <li><a href="<%=host%>/signUp">Sign Up</a></li>
+        <% } %>
     </ul>
 </nav>

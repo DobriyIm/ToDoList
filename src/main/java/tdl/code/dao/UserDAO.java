@@ -32,18 +32,18 @@ public class UserDAO {
         user.setId(UUID.randomUUID().toString());
         user.setSalt(hashService.hash(UUID.randomUUID().toString()));
 
-        String sql = "INSERT INTO users('id','login','pass','email','salt') VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO users (id,login,pass,salt,email) VALUES(?,?,?,?,?)";
 
         try(PreparedStatement prep = connection.prepareStatement(sql)){
             prep.setString(1, user.getId());
             prep.setString(2, user.getLogin());
             prep.setString(3, this.makePasswordHash(user.getPass(), user.getSalt()));
-            prep.setString(1, user.getEmail());
-            prep.setString(1, user.getSalt());
+            prep.setString(4, user.getSalt());
+            prep.setString(5, user.getEmail());
             prep.executeUpdate();
         }
         catch (SQLException ex){
-            System.out.println(ex.getMessage());
+            System.out.println("MySqlService::add error: " + ex.getMessage());
             return null;
         }
         return user.getId();
@@ -55,7 +55,7 @@ public class UserDAO {
      * @return true if email NOT in Db
      */
     public boolean isEmailFree(String email){
-        String sql = "SELECT COUNT(u.email) FROM users u WHERE u.'email' = ? ";
+        String sql = "SELECT COUNT(u.email) FROM users u WHERE u.email = ? ";
         try(PreparedStatement prep = connection.prepareStatement(sql)){
             prep.setString(1, email);
             ResultSet res = prep.executeQuery();
@@ -76,12 +76,13 @@ public class UserDAO {
      * @return entities.User or null if not found
      */
     public User getUserByCredentials(String email, String password){
-        String sql = "SELECT * FROM users u WHERE u.'email' = ?";
+        String sql = "SELECT * FROM users u WHERE u.email = ?";
         try(PreparedStatement prep = connection.prepareStatement(sql)){
             prep.setString(1, email);
             ResultSet res = prep.executeQuery();
             if(res.next()){
                 User user = new User(res);
+                System.out.println(user.getEmail());
                 String expectedHash = this.makePasswordHash(password, user.getSalt());
                 if(expectedHash.equals(user.getPass())){
                     return user;
