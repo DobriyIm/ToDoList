@@ -7,7 +7,10 @@ import tdl.code.services.HashServices.HashService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class TaskDAO {
@@ -29,7 +32,10 @@ public class TaskDAO {
      */
     public String add(Task task){
         task.setId(UUID.randomUUID().toString());
-        String sql = "INSERT INTO tasks (id, userId,text, creationDate, completionTime, completionDate) VALUES(?,?,?,?,?,?) " ;
+
+        String sql = "INSERT INTO tasks (id, userId, text, creationDate, completionTime, completionDate) VALUES(?,?,?,?,?,?) " ;
+
+        System.out.println(task.getId() + " [] " + task.getText() + " [] " + task.getCreationDate() + " [] " + task.getCompletionDate());
 
         try(PreparedStatement prep = connection.prepareStatement(sql)){
             prep.setString(1, task.getId());
@@ -38,10 +44,41 @@ public class TaskDAO {
             prep.setDate(4,task.getCreationDate());
             prep.setString(5, task.getCompletionTime());
             prep.setString(6,task.getCompletionDate());
+
+            prep.executeUpdate();
+
         }catch (SQLException ex){
             System.out.println("MySqlService::add task error : " + ex.getMessage());
             return null;
         }
         return task.getId();
+    }
+
+    /**
+     * Get all task's of specific user
+     * @param userId
+     * @return array of tasks
+     */
+    public List<Task> getAllTasks(String userId){
+        String sql = "SELECT * FROM tasks t WHERE t.userId = ?";
+        List<Task> tasks = new ArrayList<>();
+
+        try(PreparedStatement prep = connection.prepareStatement(sql)){
+            prep.setString(1, userId);
+            ResultSet res = prep.executeQuery();
+            while(res.next()){
+                Task task = new Task(res);
+                tasks.add(task);
+            }
+        }
+        catch (SQLException ex){
+            System.out.println("TaskDAO error::getAllTasks : " + ex.getMessage());
+        }
+
+        if(tasks.size() > 0)
+            return tasks;
+        else
+            return null;
+
     }
 }

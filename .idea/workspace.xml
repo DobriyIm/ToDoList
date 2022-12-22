@@ -9,25 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55cffabd-3a73-49c9-a1ee-18dfdef3d8d5" name="Changes" comment="dao and entity added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/dao/TaskDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/entities/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/SignInServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/SignUpServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/signIn.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/signUp.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c8beac4-1416-4d5c-abb6-41e45df9b403.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c8beac4-1416-4d5c-abb6-41e45df9b403/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c8beac4-1416-4d5c-abb6-41e45df9b403/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+    <list default="true" id="55cffabd-3a73-49c9-a1ee-18dfdef3d8d5" name="Changes" comment="Work with Users ended.&#10;Added task entity and started task DAO">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/TasksServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/tasks.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/baa25f5e-b0f3-41aa-8b35-5a7a553314c9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/baa25f5e-b0f3-41aa-8b35-5a7a553314c9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/dao/TaskDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/dao/TaskDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/ioc/ConfigModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/ioc/ConfigModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/ioc/ConfigServlets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/ioc/ConfigServlets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/HomeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/SignInServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/SignInServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Components/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Components/navbar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -82,6 +73,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IntelliJ IDEA\Java Projects\Web\ToDoList\src\main\webapp\WEB-INF\Pages" />
       <recent name="D:\IntelliJ IDEA\Java Projects\Web\ToDoList\src\main\java\tdl\code" />
       <recent name="D:\IntelliJ IDEA\Java Projects\Web\ToDoList\src\main\webapp" />
     </key>
@@ -186,7 +178,8 @@
       <updated>1671352057600</updated>
       <workItem from="1671352059193" duration="12213000" />
       <workItem from="1671441740571" duration="8863000" />
-      <workItem from="1671453652399" duration="3365000" />
+      <workItem from="1671453652399" duration="3489000" />
+      <workItem from="1671712304321" duration="11250000" />
     </task>
     <task id="LOCAL-00001" summary="Created">
       <created>1671352200144</created>
@@ -202,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671368717792</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Work with Users ended.&#10;Added task entity and started task DAO">
+      <created>1671457864495</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671457864495</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +222,19 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created" />
     <MESSAGE value="dao and entity added" />
-    <option name="LAST_COMMIT_MESSAGE" value="dao and entity added" />
+    <MESSAGE value="Work with Users ended.&#10;Added task entity and started task DAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work with Users ended.&#10;Added task entity and started task DAO" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/signUp.jsp</url>
+          <line>10</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

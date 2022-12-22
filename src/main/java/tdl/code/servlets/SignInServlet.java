@@ -24,6 +24,14 @@ public class SignInServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        HttpSession session = req.getSession();
+
+        if(req.getParameter("logout") != null){
+            session.removeAttribute("authUserId");
+            resp.sendRedirect(req.getContextPath());
+            return;
+        }
+
         req.setAttribute("pageBody", "signIn.jsp");
         req.getRequestDispatcher("/_layout.jsp")
                 .forward(req,resp);
@@ -36,12 +44,6 @@ public class SignInServlet extends HttpServlet {
         String  userPass = req.getParameter("userPassword");
 
         HttpSession session = req.getSession();
-
-        if(req.getParameter("logout") != null){
-            session.removeAttribute("authUserId");
-            resp.sendRedirect(req.getContextPath());
-            return;
-        }
 
         try{
             User user = userDAO.getUserByCredentials(userEmail,userPass);

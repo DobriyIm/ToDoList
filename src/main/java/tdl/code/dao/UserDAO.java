@@ -82,7 +82,6 @@ public class UserDAO {
             ResultSet res = prep.executeQuery();
             if(res.next()){
                 User user = new User(res);
-                System.out.println(user.getEmail());
                 String expectedHash = this.makePasswordHash(password, user.getSalt());
                 if(expectedHash.equals(user.getPass())){
                     return user;

@@ -5,6 +5,7 @@ import com.google.inject.servlet.ServletModule;
 import tdl.code.servlets.HomeServlet;
 import tdl.code.servlets.SignInServlet;
 import tdl.code.servlets.SignUpServlet;
+import tdl.code.servlets.TasksServlet;
 
 @Singleton
 public class ConfigServlets extends ServletModule {
@@ -13,5 +14,6 @@ public class ConfigServlets extends ServletModule {
             serve("/").with(HomeServlet.class);
             serve("/signUp").with(SignUpServlet.class);
             serve("/signIn").with(SignInServlet.class);
+            serve("/tasks").with(TasksServlet.class);
     }
 }
