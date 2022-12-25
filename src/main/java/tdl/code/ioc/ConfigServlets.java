@@ -2,10 +2,7 @@ package tdl.code.ioc;
 
 import com.google.inject.Singleton;
 import com.google.inject.servlet.ServletModule;
-import tdl.code.servlets.HomeServlet;
-import tdl.code.servlets.SignInServlet;
-import tdl.code.servlets.SignUpServlet;
-import tdl.code.servlets.TasksServlet;
+import tdl.code.servlets.*;
 
 @Singleton
 public class ConfigServlets extends ServletModule {
@@ -14,6 +11,9 @@ public class ConfigServlets extends ServletModule {
             serve("/").with(HomeServlet.class);
             serve("/signUp").with(SignUpServlet.class);
             serve("/signIn").with(SignInServlet.class);
-            serve("/tasks").with(TasksServlet.class);
+            serve("/tasks").with(TasksListServlet.class);
+            serve("/task").with(TaskServlet.class);
+            serve("/projects").with(ProjectsListServlet.class);
+            serve("/project").with(ProjectServlet.class);
     }
 }

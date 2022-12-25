@@ -15,11 +15,11 @@ import java.sql.Date;
 import java.util.List;
 
 @Singleton
-public class TasksServlet extends HttpServlet {
+public class TasksListServlet extends HttpServlet {
     private final TaskDAO taskDAO;
 
     @Inject
-    public TasksServlet(TaskDAO taskDAO){
+    public TasksListServlet(TaskDAO taskDAO){
         this.taskDAO = taskDAO;
     }
 
@@ -33,13 +33,17 @@ public class TasksServlet extends HttpServlet {
             return;
         }
 
+        try{
 
-        List<Task> tasks = taskDAO.getAllTasks((String)session.getAttribute("authUserId"));
+            List<Task> tasks = taskDAO.getAllTasksByUserId((String)session.getAttribute("authUserId"));
 
-        if(tasks == null)
-            req.setAttribute("tasksError", "You don't have tasks.");
-        else{
-            req.setAttribute("tasks", tasks);
+            if(tasks == null)
+                req.setAttribute("tasksListMessage", "You don't have task.");
+            else
+                req.setAttribute("tasks", tasks);
+
+        }catch (Exception ex){
+            req.setAttribute("taskListError", ex.getMessage());
         }
 
         req.setAttribute("pageBody", "tasks.jsp");
@@ -50,31 +54,33 @@ public class TasksServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        HttpSession session = req.getSession();
+        try {
 
-        String text = req.getParameter("textT");
-        String CompTime = req.getParameter("compTimeT");
-        String CompDate = req.getParameter("compDateT");
+            HttpSession session = req.getSession();
 
-        try{
-            if(text == "" || text == null)
-                throw new Exception("Can't add task without text.");
+            String taskText = req.getParameter("text");
+            String taskCompletionTime = req.getParameter("compTime");
+            String taskCompletionDate = req.getParameter("compDate");
+            String taskProjectId = req.getParameter("projectId");
+
+            if (taskText == null)
+                throw new Exception("Task must have some text.");
 
             Task task = new Task();
 
             task.setUserId((String)session.getAttribute("authUserId"));
-            task.setText(text);
-            task.setCompletionTime(CompTime);
-            task.setCompletionDate(CompDate);
+            task.setText(taskText);
+            task.setCompletionTime(taskCompletionTime);
+            task.setCompletionDate(taskCompletionDate);
+            task.setProjectId(taskProjectId);
             task.setCreationDate(new Date(System.currentTimeMillis()));
 
+            if(taskDAO.add(task) == null)
+                throw new Exception("Can't add task.");
 
-            if(taskDAO.add(task) == null){
-                throw new Exception("Server error: try later.");
-            }
 
         }catch (Exception ex){
-            System.out.println("Adding task error: " + ex.getMessage());
+            req.setAttribute("taskError", ex.getMessage());
         }
 
         resp.sendRedirect(req.getRequestURI());

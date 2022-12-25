@@ -10,6 +10,7 @@
         <% if(authId != null) { %>
             <li><a href="<%=host%>/">Home</a></li>
             <li><a href="<%=host%>/tasks">Tasks</a> </li>
+        <li><a href="<%=host%>/projects">Projects</a> </li>
             <li><a href="<%=host%>/signIn?logout=true">Log out</a></li>
         <% } else{ %>
             <li><a href="<%=host%>/signIn">Sign In</a></li>

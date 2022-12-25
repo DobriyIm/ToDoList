@@ -1,30 +1,26 @@
 package tdl.code.entities;
 
-import com.sun.org.apache.bcel.internal.generic.PUSH;
-
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Task {
+public class Project {
     private String id;
     private String userId;
-    private String projectId;
-    private String text;
+    private String name;
     private Date creationDate;
-    private String completionTime;
     private String completionDate;
+    private Boolean isCompleted;
 
-    public Task(){}
+    public Project(){}
 
-    public Task(ResultSet res) throws SQLException {
+    public Project(ResultSet res) throws SQLException {
         this.setId(res.getString("id"));
         this.setUserId(res.getString("userId"));
-        this.setProjectId(res.getString("projectId"));
-        this.setText(res.getString("text"));
+        this.setName(res.getString("name"));
         this.setCreationDate(res.getDate("creationDate"));
-        this.setCompletionTime(res.getString("completionTime"));
         this.setCompletionDate(res.getString("completionDate"));
+        this.setIsCompleted(res.getBoolean("isCompleted"));
     }
 
     public String getId(){
@@ -37,15 +33,8 @@ public class Task {
     public String getUserId() { return userId;}
     public void setUserId(String userId){this.userId = userId;}
 
-    public String getProjectId() { return projectId;}
-    public void setProjectId(String projectId){this.projectId = projectId;}
-
-    public String getText(){
-        return text;
-    }
-    public void setText(String text){
-        this.text = text;
-    }
+    public String getName() { return name;}
+    public void setName(String name){this.name = name;}
 
     public Date getCreationDate(){
         return creationDate;
@@ -54,17 +43,14 @@ public class Task {
         this.creationDate = creationDate;
     }
 
-    public String getCompletionTime(){
-        return completionTime;
-    }
-    public void setCompletionTime(String completionTime){
-        this.completionTime = completionTime;
-    }
-
     public String getCompletionDate(){
         return completionDate;
     }
     public void setCompletionDate(String completionDate){
         this.completionDate = completionDate;
     }
+
+    public Boolean getIsCompleted(){ return isCompleted; }
+    public void setIsCompleted(Boolean isCompleted){ this.isCompleted = isCompleted; }
+
 }

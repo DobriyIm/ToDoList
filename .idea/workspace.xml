@@ -9,16 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55cffabd-3a73-49c9-a1ee-18dfdef3d8d5" name="Changes" comment="Work with Users ended.&#10;Added task entity and started task DAO">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/TasksServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/tasks.jsp" afterDir="false" />
+    <list default="true" id="55cffabd-3a73-49c9-a1ee-18dfdef3d8d5" name="Changes" comment="Page &quot;task&quot; added">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/dao/ProjectDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/entities/Project.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/ProjectServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/ProjectsListServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/TaskServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/projectInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/projects.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/taskInfo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/baa25f5e-b0f3-41aa-8b35-5a7a553314c9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/baa25f5e-b0f3-41aa-8b35-5a7a553314c9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/dao/TaskDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/dao/TaskDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/entities/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/entities/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/ioc/ConfigServlets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/ioc/ConfigServlets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/SignInServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/SignInServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/TasksServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tdl/code/servlets/TasksListServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Components/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Components/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/tasks.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Pages/tasks.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +36,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -179,7 +186,10 @@
       <workItem from="1671352059193" duration="12213000" />
       <workItem from="1671441740571" duration="8863000" />
       <workItem from="1671453652399" duration="3489000" />
-      <workItem from="1671712304321" duration="11250000" />
+      <workItem from="1671712304321" duration="11351000" />
+      <workItem from="1671867438331" duration="17842000" />
+      <workItem from="1671900149694" duration="4785000" />
+      <workItem from="1671954083022" duration="12632000" />
     </task>
     <task id="LOCAL-00001" summary="Created">
       <created>1671352200144</created>
@@ -202,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671457864495</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Page &quot;task&quot; added">
+      <created>1671724034493</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671724034493</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +240,8 @@
     <MESSAGE value="Created" />
     <MESSAGE value="dao and entity added" />
     <MESSAGE value="Work with Users ended.&#10;Added task entity and started task DAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work with Users ended.&#10;Added task entity and started task DAO" />
+    <MESSAGE value="Page &quot;task&quot; added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Page &quot;task&quot; added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -235,6 +253,13 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="tasks" />
+        <watch expression="tasks" />
+        <watch expression="tasks" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
